@@ -26,7 +26,7 @@ In order to better understand the idiosyncratic indian general election system w
     *Due Date*: April, 4
     
 4.  **Build and Post HIT** (4 pts)
-    Our HIT will ask questions related to the upcoming election which we can use in our Surprisingly Popular algorithm. Will also ask questions to determine which district the worker is in and a quality control question. Screenshots of HIT attached.
+    Our HIT will ask questions related to the upcoming election which we can use in our Surprisingly Popular algorithm. Will also ask questions to determine which district the worker is in and a quality control question. Screenshots of HIT in GIT.
 *Due Date*: April, 4
     
 5. **Perform Quality Control and Cleaning of Results** (2 pts)
