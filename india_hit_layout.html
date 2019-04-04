@@ -1,0 +1,189 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+  <crowd-instructions link-text="View instructions" link-type="button">
+    <short-summary>
+      <p>Please answer honestly and to the best of your awareness.</p>
+    </short-summary>
+
+    <detailed-instructions>
+      <h3>If you are not sure, just put your best guess.</h3>
+      <p>None of your answers will be associated with you personally, or used for anything other than academic research.</p>
+    </detailed-instructions>
+  </crowd-instructions>
+
+  <p>Question 1:</p>
+  <div>
+    <p>Do you plan to vote in the coming general election in India (April-May 2019)?</p>
+    <crowd-radio-group name="planToVote" required>
+        <p>
+        <crowd-radio-button name="yes" value="yes"></crowd-radio-button>
+        Definitely Yes</p>
+        <p>
+        <crowd-radio-button name="yes" value="yes"></crowd-radio-button>
+        Probably Yes</p>
+        <p>
+        <crowd-radio-button name="yes" value="yes"></crowd-radio-button>
+        Not Sure</p>
+        <p>
+        <crowd-radio-button name="yes" value="yes"></crowd-radio-button>
+        Probably No</p>
+        <p>
+        <crowd-radio-button name="no" value="no"></crowd-radio-button>
+        Definitely No</p>
+    </crowd-radio-group>
+  </div>
+
+  <p>Question 2:</p>
+
+  <div>
+    <p>Who is the current Prime Minister of India?</p>
+    <crowd-input name="currentPM" placeholder="Name" required></crowd-input>
+  </div>
+
+  <!--<div>-->
+  <!--  <p>Which state do you reside in?</p>-->
+  <!--  <crowd-input name="state" placeholder="Enter State" required></crowd-input>-->
+    <!-- Don't know how to make this a dropdown -->
+  <!--</div>-->
+
+  <p>Question 3:</p>
+
+  <div class="form-group">
+    <p>Which state or union territory do you reside in?</p>
+    <!--<label class="col-md-4 control-label" for="selectbasic">Select Basic</label>-->
+    <div class="col-md-4">
+        <select id="stateSelect" name="stateSelect" class="form-control">
+            <option value="1">Andhra Pradesh</option>
+            <option value="2">Arunachal Pradesh</option>
+            <option value="3">Assam</option>
+            <option value="4">Bihar</option>
+            <option value="5">Chhattisgarh</option>
+            <option value="6">Goa</option>
+            <option value="7">Gujarat</option>
+            <option value="8">Haryana</option>
+            <option value="9">Himachal Pradesh</option>
+            <option value="10">Jammu and Kashmir</option>
+            <option value="11">Jharkhand</option>
+            <option value="12">Karnataka</option>
+            <option value="13">Kerala</option>
+            <option value="14">Madhya Pradesh</option>
+            <option value="15">Maharashtra</option>
+            <option value="16">Manipur</option>
+            <option value="17">Meghalaya</option>
+            <option value="18">Mizoram</option>
+            <option value="19">Nagaland</option>
+            <option value="20">Odisha</option>
+            <option value="21">Punjab</option>
+            <option value="22">Rajasthan</option>
+            <option value="23">Sikkim</option>
+            <option value="24">Tamil Nadu</option>
+            <option value="25">Telangana</option>
+            <option value="26">Tripura</option>
+            <option value="27">Uttar Pradesh</option>
+            <option value="28">Uttarakhand</option>
+            <option value="29">West Bengal</option>
+            <option value="30">Andaman and Nicobar Islands</option>
+            <option value="31">Chandigarh</option>
+            <option value="32">Dadra and Nagar Haveli</option>
+            <option value="33">Daman and Diu</option>
+            <option value="34">Lakshadweep</option>
+            <option value="35">National Capital Territory of Delhi</option>
+            <option value="36">Puducherry</option>
+        </select>
+    </div>
+  </div>
+
+  <p>Question 4:</p>
+
+  <div>
+    <p>If you plan to vote, which party or alliance do you plan to vote for?</p>
+    <crowd-radio-group name="votingFor">
+        <p>
+        <crowd-radio-button name="ndp" value="ndp"></crowd-radio-button>
+        National Democratic Alliance; Bharatiya Janata Party</p>
+        <p>
+        <crowd-radio-button name="upa" value="incp"></crowd-radio-button>
+        United Progressive Alliance; Indian National Congress Party</p>
+        <p>
+        <crowd-radio-button name="other" value="other"></crowd-radio-button>
+        Other (please write your choice below)</p>
+    </crowd-radio-group>
+  </div>
+
+  <div>
+    <p>If you selected "Other", please write your choice here:</p>
+    <crowd-input name="otherVote" placeholder="Other Choice"></crowd-input>
+  </div>
+
+  <p>Question 5:</p>
+
+  <div>
+    <p>Which party or alliance do you think will win <b>your state</b>?</p>
+    <crowd-radio-group name="willWin" required>
+        <p>
+        <crowd-radio-button name="ndp2" value="ndp2"></crowd-radio-button>
+        National Democratic Alliance; Bharatiya Janata Party</p>
+        <p>
+        <crowd-radio-button name="upa2" value="incp2"></crowd-radio-button>
+        United Progressive Alliance; Indian National Congress Party</p>
+        <p>
+        <crowd-radio-button name="other2" value="other2"></crowd-radio-button>
+        Other (please write your choice below)</p>
+    </crowd-radio-group>
+  </div>
+
+  <div>
+    <p>If you selected "Other", please write your choice here:</p>
+    <crowd-input name="otherWin" placeholder="Other Choice"></crowd-input>
+  </div>
+
+  <p>Question 6:</p>
+
+  <div>
+    <p>What percentage of the vote do you think they will get <b>in your state</b>?</p>
+    <crowd-slider name="votePercent" min="1" max="100" step="1" pin="true" required></crowd-slider>
+  </div>
+
+  <p>Question 7:</p>
+
+  <div>
+    <p>Which party or alliance do you think most people would say will win <b>your state</b>?</p>
+    <crowd-radio-group name="popularChoice" required>
+        <p>
+        <crowd-radio-button name="ndp3" value="ndp3"></crowd-radio-button>
+        National Democratic Alliance; Bharatiya Janata Party</p>
+        <p>
+        <crowd-radio-button name="upa3" value="incp3"></crowd-radio-button>
+        United Progressive Alliance; Indian National Congress Party</p>
+        <p>
+        <crowd-radio-button name="other3" value="other3"></crowd-radio-button>
+        Other (please write your choice below)</p>
+    </crowd-radio-group>
+  </div>
+
+  <div>
+    <p>If you selected "Other", please write your choice here:</p>
+    <crowd-input name="otherPopular" placeholder="Other Choice"></crowd-input>
+  </div>
+
+  <p>Question 8:</p>
+
+  <div>
+    <p>What percentage of the vote do you think most people would say they will get <b>in your state</b>?</p>
+    <crowd-slider name="popularPercent" min="1" max="100" step="1" pin="true" required></crowd-slider>
+  </div>
+
+  <p>Question 9:</p>
+
+  <div>
+    <p>Did you experience any issues or problems with this task?</p>
+    <crowd-text-area name="problems" placeholder="Optional" rows="2" ></crowd-text-area>
+  </div>
+</crowd-form>
