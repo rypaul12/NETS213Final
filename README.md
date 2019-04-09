@@ -34,3 +34,27 @@ In order to better understand the idiosyncratic indian general election system w
     
 6.  **Aggregation of Results** (4 pts)
      Perform aggregation over results and execute Surprisingly Popular algorithm to get predictions
+
+
+## Data
+
+1. **Sample input/output from your QC module**: 
+
+**Input**
+The input is the input gotten from the HIT. We get True/False values for if they voted for NDP, UPA, or other. Additionally, we get their confidence (on a scale from 1-100) on their candidate winning. We also get their thoughts on what percent of people will vote for NDP, UPA, and other respectively. 
+
+**Output**
+The output is nearly the same, but we filter out any HITS that fail our preliminary question. The question is "who is the current prime minister of India."
+
+2. **Sample input/output from your aggregation module**: 
+**Input**
+The input is the input gotten from QC model. All HITS that pass the question.
+
+**Output**
+The output is grouped by state, and shows per state the percentage breakdown of turker's personal votes, the average confidence in vote per state, and the average percentage they think other people in their state will vote for.
+
+
+## Code
+The **quality_control** function handles quality control and filtering out bad HITS.
+
+The **aggregation** function handles the aggregation features, and getting the averages per state.
