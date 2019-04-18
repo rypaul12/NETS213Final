@@ -57,4 +57,4 @@ The output is grouped by state, and shows per state the percentage breakdown of 
 ## Code
 The **quality_control** function handles quality control and filtering out bad HITS by checking if the quality control question is correct.
 
-The **aggregation** function handles the aggregation features, and getting the averages per state.
+The **aggregation** function handles the aggregation features, and getting the averages of who is voting for what alliance per state.
